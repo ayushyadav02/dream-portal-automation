@@ -1,0 +1,33 @@
+{
+  "name": "dream-portal-automation",
+  "version": "1.0.0",
+  "description": "Production-quality Playwright test automation for the Dream Portal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:headed": "npx playwright test --project=chromium --headed",
+    "test:all-browsers": "npx playwright test",
+    "test:core": "npx playwright test --project=chromium --grep-invert \"AI\"",
+    "test:ai": "npx playwright test --project=chromium tests/aiValidation.spec.ts",
+    "report": "npx playwright show-report playwright-report",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "clean": "rimraf test-results playwright-report allure-results allure-report screenshots logs"
+  },
+  "keywords": [
+    "playwright",
+    "test-automation",
+    "pom",
+    "qa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2",
+    "allure-playwright": "^3.12.2",
+    "dotenv": "^18.0.3",
+    "typescript": "^7.0.2"
+  }
+}
